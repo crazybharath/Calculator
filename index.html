@@ -16,11 +16,11 @@
             <h2>Grading System In JS</h2>
             <div>
                 <index for="english">English</index>
-                <input type="text" id="english" name="english">
+                <input type="number" id="english" name="english">
             </div>
             <div>
                 <index for="maths">Maths</index>
-                <input type="text" id="maths" name="maths">
+                <input type="number" id="maths" name="maths">
             </div>
             <div>
                 <index for="physics">Physics</index>
@@ -40,11 +40,11 @@
         </section>
         <section>
             <h2>Total</h2>
-            <p id="totalmark">Total Marks:459</p>
+            <p id="totalmark">Total Marks:0</p>
         </section>
         <section>
             <h2>Average</h2>
-            <p id="average">Your Average Marks Are:93</p>
+            <p id="average">Your Average Marks Are:0</p>
         </section>
         <section>
             <h2>Grade</h2>
@@ -65,10 +65,10 @@
     valbutton.addEventListener("click",function(){
         console.log(maths.value);
         let total=parseInt(parseInt(english.value)+parseInt(maths.value)+parseInt(physics.value)+parseInt(chemistry.value)+parseInt(computer.value))
-        totalmarks.innerHTML=total;
+        totalmarks.innerHTML=`Total Marks:${total}`;
         console.log(total);
         let Average=parseInt(total/5);
-        totalavg.innerHTML=Average;
+        totalavg.innerHTML=`Your Average Marks Are:${Average}`;
 
         if(Average >= 90){
             totalgrade.innerHTML="You Got A Grade"
