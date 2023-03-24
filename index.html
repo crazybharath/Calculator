@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caluculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 class="heading">Grading System Assignment</h1>
+    <div class="main">
+        <section name="form">
+            <h2>Grading System In JS</h2>
+            <div>
+                <index for="english">English</index>
+                <input type="text" id="english" name="english">
+            </div>
+            <div>
+                <index for="maths">Maths</index>
+                <input type="text" id="maths" name="maths">
+            </div>
+            <div>
+                <index for="physics">Physics</index>
+                <input type="number" id="physics" name="physics">
+            </div>
+            <div>
+                <index for="chemistry">Chemistry</index>
+                <input type="number" id="chemistry" name="chemistry">
+            </div>
+            <div>
+                <index for="computer">Computer</index>
+                <input type="number" id="computer" name="computer">
+            </div>
+            <div>
+                <button id="btn">Calculate Grade</button>
+            </div>
+        </section>
+        <section>
+            <h2>Total</h2>
+            <p id="totalmark">Total Marks:459</p>
+        </section>
+        <section>
+            <h2>Average</h2>
+            <p id="average">Your Average Marks Are:93</p>
+        </section>
+        <section>
+            <h2>Grade</h2>
+            <p id="grade">You Got A Grade</p>
+        </section>
+    </div>
+    <!-- <link href="./script.js"> -->
+    <script>
+        const english=document.getElementById("english")
+        const maths=document.getElementById("maths")
+        const physics=document.getElementById("physics")
+        const chemistry=document.getElementById("chemistry")
+        const computer=document.getElementById("computer")
+        const totalmarks=document.getElementById("totalmark");
+        const totalavg=document.getElementById("average");
+        const totalgrade=document.getElementById("grade")
+    const valbutton=document.getElementById("btn");
+    valbutton.addEventListener("click",function(){
+        console.log(maths.value);
+        let total=parseInt(parseInt(english.value)+parseInt(maths.value)+parseInt(physics.value)+parseInt(chemistry.value)+parseInt(computer.value))
+        totalmarks.innerHTML=total;
+        console.log(total);
+        let Average=parseInt(total/5);
+        totalavg.innerHTML=Average;
+
+        if(Average >= 90){
+            totalgrade.innerHTML="You Got A Grade"
+        }
+         else if(Average >= 80 || Average < 89){
+            totalgrade.innerHTML="You Got B Grade"
+        } else if(Average >= 70 || Average < 79){
+            totalgrade.innerHTML="You Got C Grade"
+        }else if(Average >= 60 || Average < 59){
+            totalgrade.innerHTML="You Got D Grade"
+        }else{
+            totalgrade.innerHTML="You Got E Grade"
+        }
+        
+
+    })
+          
+    </script>
+</body>
+    
+</html>
